@@ -1,0 +1,1850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Work directly with the Canadian Gem Trade Guild to request gemstones or jewellery, review verification from the supplying country and receive GIA verification in Canada before payment." />
+  <title>Gemstone &amp; Jewellery Buyers | Canadian Gem Trade Guild</title>
+  <link rel="icon" type="image/png" href="cgtg-nav-logo.png" />
+  <link rel="apple-touch-icon" href="cgtg-nav-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --sapphire-950: #03101f;
+      --sapphire-900: #061a32;
+      --sapphire-800: #0a2748;
+      --sapphire-700: #0e3966;
+      --sapphire-600: #15518f;
+      --silver-50: #f8fafc;
+      --silver-100: #edf1f5;
+      --silver-200: #d7dee7;
+      --silver-300: #b8c2ce;
+      --silver-500: #7d8997;
+      --silver-700: #465260;
+      --white: #ffffff;
+      --ink: #111827;
+      --accent: #b9c7d8;
+      --accent-dark: #8f9fb2;
+      --success: #2d7d66;
+      --shadow: 0 22px 55px rgba(3, 16, 31, 0.14);
+      --radius-lg: 22px;
+      --radius-md: 14px;
+      --container: 1180px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background: var(--silver-50);
+      line-height: 1.6;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      color: var(--silver-500);
+      font-size: 0.76rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--sapphire-950);
+      font-size: clamp(2.15rem, 4vw, 3.55rem);
+      line-height: 0.98;
+      letter-spacing: -0.02em;
+    }
+
+    .section-copy {
+      margin-top: 18px;
+      max-width: 640px;
+      color: var(--silver-700);
+      font-size: 1rem;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: var(--sapphire-950);
+      background: linear-gradient(135deg, #dfe6ee, #aebdcd);
+      box-shadow: 0 12px 26px rgba(185, 199, 216, 0.2);
+    }
+
+    .btn-primary:hover {
+      background: linear-gradient(135deg, #eef2f6, #b8c5d3);
+    }
+
+    .btn-outline {
+      color: var(--white);
+      border-color: rgba(255, 255, 255, 0.45);
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(8px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--white);
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    /* Header */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(3, 16, 31, 0.95);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-wrap {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      color: var(--white);
+    }
+
+    .brand-mark {
+      width: 58px;
+      height: 58px;
+      flex: 0 0 58px;
+      overflow: hidden;
+      border-radius: 8px;
+      background: #07111f;
+    }
+
+    .brand-mark img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .nav-brand {
+      gap: 0;
+    }
+
+    .footer-brand .brand-mark {
+      width: 74px;
+      height: 74px;
+      flex-basis: 74px;
+    }
+
+    .brand-copy strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.17rem;
+      line-height: 1;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-copy span {
+      display: block;
+      margin-top: 5px;
+      color: var(--silver-300);
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      color: var(--silver-200);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      position: relative;
+      padding: 10px 0;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 100%;
+      bottom: 4px;
+      height: 1px;
+      background: var(--silver-200);
+      transition: right 0.2s ease;
+    }
+
+    .nav-links a:hover::after,
+    .nav-links a.active::after {
+      right: 0;
+    }
+
+    .nav-actions {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      white-space: nowrap;
+    }
+
+    .nav-cta,
+    .nav-login {
+      width: auto;
+      min-height: 42px;
+      padding-inline: 15px;
+      font-size: 0.66rem;
+      flex: 0 0 auto;
+    }
+
+    .nav-login {
+      color: var(--silver-200);
+      border-color: rgba(255, 255, 255, 0.28);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .nav-login:hover {
+      color: var(--sapphire-950);
+      border-color: var(--silver-200);
+      background: var(--silver-200);
+    }
+
+    .mobile-nav {
+      display: none;
+    }
+
+    .menu-btn {
+      display: none;
+      width: 44px;
+      height: 44px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 8px;
+      color: var(--white);
+      background: transparent;
+      cursor: pointer;
+    }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 680px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background-image:
+        linear-gradient(90deg, rgba(3, 16, 31, 0.96) 0%, rgba(3, 16, 31, 0.87) 42%, rgba(3, 16, 31, 0.35) 72%, rgba(3, 16, 31, 0.12) 100%),
+        url("canadian-gem-trade-guild-hero.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center 58%;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 160px;
+      background: linear-gradient(transparent, rgba(3, 16, 31, 0.42));
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 110px 0 130px;
+      transform: translateX(-60px);
+    }
+
+    .hero-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 24px;
+      color: var(--silver-200);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-kicker::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--silver-300);
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.25rem, 7vw, 6.25rem);
+      line-height: 0.88;
+      letter-spacing: -0.035em;
+      max-width: 760px;
+    }
+
+    .hero h1 span {
+      color: #c7d2df;
+    }
+
+    .hero p {
+      margin-top: 28px;
+      max-width: 590px;
+      color: var(--silver-200);
+      font-size: 1.04rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 38px;
+    }
+
+    /* Trust strip */
+    .trust-strip {
+      position: relative;
+      z-index: 4;
+      margin-top: -58px;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--white);
+      border: 1px solid var(--silver-200);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .trust-item {
+      display: flex;
+      gap: 14px;
+      padding: 26px 24px;
+      border-right: 1px solid var(--silver-200);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-icon {
+      flex: 0 0 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--sapphire-700);
+      background: var(--silver-100);
+      font-size: 1.1rem;
+    }
+
+    .trust-item strong {
+      display: block;
+      color: var(--sapphire-950);
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .trust-item p {
+      margin-top: 5px;
+      color: var(--silver-500);
+      font-size: 0.76rem;
+      line-height: 1.45;
+    }
+
+    /* About */
+    .about {
+      padding: 120px 0;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 0.88fr 1.12fr;
+      align-items: stretch;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      background: var(--white);
+    }
+
+    .about-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(42px, 6vw, 78px);
+      color: var(--white);
+      background:
+        radial-gradient(circle at 15% 10%, rgba(46, 101, 160, 0.32), transparent 40%),
+        var(--sapphire-950);
+    }
+
+    .about-copy .eyebrow {
+      color: var(--silver-300);
+    }
+
+    .about-copy .section-title {
+      color: var(--white);
+    }
+
+    .about-copy .section-copy {
+      color: var(--silver-300);
+    }
+
+    .about-image {
+      min-height: 520px;
+      background:
+        linear-gradient(rgba(3, 16, 31, 0.07), rgba(3, 16, 31, 0.18)),
+        url("suppliers-certification-review.png") center/cover no-repeat;
+    }
+
+    .about-actions {
+      margin-top: 30px;
+    }
+
+    /* Membership */
+    .membership {
+      padding: 110px 0 125px;
+      background: linear-gradient(180deg, #ffffff, var(--silver-100));
+    }
+
+    .section-heading-center {
+      max-width: 760px;
+      margin: 0 auto 54px;
+      text-align: center;
+    }
+
+    .section-heading-center .eyebrow {
+      justify-content: center;
+    }
+
+    .section-heading-center .eyebrow::after {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .section-heading-center .section-copy {
+      margin-inline: auto;
+    }
+
+    .membership-toggle {
+      position: relative;
+      width: min(100%, 520px);
+      height: 58px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      margin: -24px auto 42px;
+      padding: 5px;
+      border: 1px solid var(--silver-300);
+      border-radius: 999px;
+      background: #e8edf2;
+      box-shadow: inset 0 2px 5px rgba(3, 16, 31, 0.08), 0 12px 28px rgba(3, 16, 31, 0.08);
+      isolation: isolate;
+    }
+
+    .membership-toggle::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 5px;
+      bottom: 5px;
+      left: 5px;
+      width: calc(50% - 5px);
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--sapphire-700), var(--sapphire-950));
+      box-shadow: 0 8px 20px rgba(3, 16, 31, 0.24);
+      transition: transform 0.28s ease;
+    }
+
+    .membership-toggle[data-active="buyer"]::before {
+      transform: translateX(100%);
+    }
+
+    .membership-toggle button {
+      border: 0;
+      border-radius: 999px;
+      background: transparent;
+      color: var(--silver-700);
+      font: inherit;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.07em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: color 0.25s ease;
+    }
+
+    .membership-toggle button[aria-selected="true"] {
+      color: var(--white);
+    }
+
+    .membership-toggle button:focus-visible {
+      outline: 3px solid rgba(39, 106, 170, 0.3);
+      outline-offset: 3px;
+    }
+
+    .membership-panel[hidden] {
+      display: none;
+    }
+
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .plan-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 520px;
+      padding: 34px 30px 30px;
+      border: 1px solid var(--silver-200);
+      border-radius: var(--radius-md);
+      background: rgba(255, 255, 255, 0.92);
+      box-shadow: 0 12px 34px rgba(3, 16, 31, 0.07);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--silver-300);
+      box-shadow: 0 22px 46px rgba(3, 16, 31, 0.12);
+    }
+
+    .plan-card.featured {
+      color: var(--white);
+      border-color: var(--sapphire-700);
+      background:
+        radial-gradient(circle at top right, rgba(39, 102, 167, 0.45), transparent 42%),
+        var(--sapphire-950);
+    }
+
+    .plan-badge {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      padding: 7px 11px;
+      border-radius: 999px;
+      color: var(--sapphire-950);
+      background: var(--silver-200);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .plan-icon {
+      width: 54px;
+      height: 54px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      border-radius: 50%;
+      color: var(--sapphire-700);
+      background: var(--silver-100);
+      font-size: 1.35rem;
+    }
+
+    .featured .plan-icon {
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.12);
+    }
+
+    .plan-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--sapphire-950);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .featured h3 {
+      color: var(--white);
+    }
+
+    .plan-price {
+      margin-top: 14px;
+      color: var(--sapphire-700);
+      font-size: 2.35rem;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+    }
+
+    .featured .plan-price {
+      color: var(--silver-200);
+    }
+
+    .plan-price span {
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0;
+    }
+
+    .plan-note {
+      margin-top: 4px;
+      color: var(--silver-500);
+      font-size: 0.78rem;
+    }
+
+    .featured .plan-note {
+      color: var(--silver-300);
+    }
+
+    .plan-list {
+      display: grid;
+      gap: 13px;
+      margin: 26px 0 32px;
+      list-style: none;
+    }
+
+    .plan-list li {
+      position: relative;
+      padding-left: 24px;
+      color: var(--silver-700);
+      font-size: 0.88rem;
+    }
+
+    .featured .plan-list li {
+      color: var(--silver-200);
+    }
+
+    .plan-list li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: var(--success);
+      font-weight: 800;
+    }
+
+    .featured .plan-list li::before {
+      color: #c8d5e3;
+    }
+
+    .plan-card .btn {
+      width: 100%;
+      margin-top: auto;
+    }
+
+    .featured .btn-primary {
+      color: var(--sapphire-950);
+      background: linear-gradient(135deg, #f3f6f9, #b8c6d6);
+    }
+
+    /* Supplier buyer split */
+    .pathways {
+      padding: 110px 0;
+      background: var(--white);
+    }
+
+    .pathway-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-top: 50px;
+    }
+
+    .pathway-card {
+      position: relative;
+      min-height: 430px;
+      display: flex;
+      align-items: flex-end;
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .pathway-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 25%, rgba(3, 16, 31, 0.92) 100%);
+      z-index: 1;
+    }
+
+    .pathway-card.suppliers {
+      background: url("verified-supplier-buyer-meeting.png") left center/cover no-repeat;
+    }
+
+    .pathway-card.buyers {
+      background: url("buyer-exclusive-gemstone-presentation.png") center/cover no-repeat;
+    }
+
+    .pathway-content {
+      position: relative;
+      z-index: 2;
+      padding: 38px;
+      color: var(--white);
+    }
+
+    .pathway-content h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 2.65rem;
+      line-height: 1;
+    }
+
+    .pathway-content p {
+      margin: 14px 0 24px;
+      max-width: 510px;
+      color: var(--silver-200);
+      font-size: 0.92rem;
+    }
+
+    /* Newsletter */
+    .newsletter {
+      padding: 105px 0;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(56, 122, 189, 0.34), transparent 34%),
+        linear-gradient(135deg, var(--sapphire-950), var(--sapphire-800));
+    }
+
+    .newsletter-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .newsletter .eyebrow {
+      color: var(--silver-300);
+    }
+
+    .newsletter .section-title {
+      color: var(--white);
+    }
+
+    .newsletter .section-copy {
+      color: var(--silver-300);
+    }
+
+    .newsletter-form {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 10px;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(12px);
+    }
+
+    .newsletter-form input {
+      min-width: 0;
+      min-height: 48px;
+      padding: 0 16px;
+      border: 0;
+      outline: 0;
+      color: var(--white);
+      background: transparent;
+    }
+
+    .newsletter-form input::placeholder {
+      color: var(--silver-300);
+    }
+
+    .form-note {
+      margin-top: 12px;
+      color: var(--silver-300);
+      font-size: 0.75rem;
+    }
+
+    .form-message {
+      display: none;
+      margin-top: 14px;
+      color: #dfe7ef;
+      font-size: 0.86rem;
+    }
+
+    /* Stats */
+    .stats {
+      padding: 34px 0;
+      background: var(--silver-100);
+      border-bottom: 1px solid var(--silver-200);
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .stat {
+      padding: 8px 26px;
+      text-align: center;
+      border-right: 1px solid var(--silver-300);
+    }
+
+    .stat:last-child {
+      border-right: 0;
+    }
+
+    .stat strong {
+      display: block;
+      font-family: "Cormorant Garamond", serif;
+      color: var(--sapphire-950);
+      font-size: 2.3rem;
+      line-height: 1;
+    }
+
+    .stat span {
+      display: block;
+      margin-top: 6px;
+      color: var(--silver-500);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* Footer */
+    .site-footer {
+      padding: 68px 0 28px;
+      color: var(--silver-300);
+      background: #020b15;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.45fr repeat(3, 0.65fr);
+      gap: 44px;
+    }
+
+    .footer-brand p {
+      margin-top: 20px;
+      max-width: 420px;
+      color: var(--silver-500);
+      font-size: 0.88rem;
+    }
+
+    .footer-col h4 {
+      margin-bottom: 18px;
+      color: var(--white);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-col a {
+      display: block;
+      margin: 10px 0;
+      color: var(--silver-500);
+      font-size: 0.86rem;
+      transition: color 0.2s ease;
+    }
+
+    .footer-col a:hover {
+      color: var(--white);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 54px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--silver-500);
+      font-size: 0.76rem;
+    }
+
+    @media (max-width: 980px) {
+      .nav-links,
+      .nav-actions {
+        display: none;
+      }
+
+      .menu-btn {
+        display: grid;
+        place-items: center;
+      }
+
+      .mobile-nav {
+        display: none;
+        padding: 8px 20px 22px;
+        border-top: 1px solid rgba(255, 255, 255, 0.08);
+        background: var(--sapphire-950);
+      }
+
+      .mobile-nav.open {
+        display: grid;
+      }
+
+      .mobile-nav a {
+        padding: 13px 0;
+        color: var(--silver-200);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+        font-size: 0.82rem;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      .trust-grid,
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .trust-item:nth-child(-n + 2) {
+        border-bottom: 1px solid var(--silver-200);
+      }
+
+      .plans-grid {
+        grid-template-columns: 1fr;
+        max-width: 640px;
+        margin-inline: auto;
+      }
+
+      .plan-card {
+        min-height: auto;
+      }
+
+      .about-grid,
+      .newsletter-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 430px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 720px) {
+      .container {
+        width: min(calc(100% - 28px), var(--container));
+      }
+
+      .brand-copy span {
+        display: none;
+      }
+
+      .hero {
+        min-height: 610px;
+        background-position: 62% center;
+      }
+
+      .hero-content {
+        padding: 86px 0 120px;
+        transform: none;
+      }
+
+      .hero h1 {
+        font-size: clamp(3.05rem, 15vw, 4.35rem);
+      }
+
+      .hero p {
+        font-size: 0.94rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .trust-strip {
+        margin-top: -40px;
+      }
+
+      .trust-grid,
+      .pathway-grid,
+      .stats-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        border-right: 0;
+        border-bottom: 1px solid var(--silver-200);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .about,
+      .membership,
+      .pathways,
+      .newsletter {
+        padding: 82px 0;
+      }
+
+      .about-copy,
+      .pathway-content {
+        padding: 34px 26px;
+      }
+
+      .about-image {
+        min-height: 350px;
+      }
+
+      .membership-paths {
+        margin-top: -18px;
+      }
+
+      .membership-path {
+        width: 100%;
+        padding-inline: 10px;
+        font-size: 0.68rem;
+        letter-spacing: 0.05em;
+      }
+
+      .newsletter-form {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-form .btn {
+        width: 100%;
+      }
+
+      .stat {
+        padding: 22px;
+        border-right: 0;
+        border-bottom: 1px solid var(--silver-300);
+      }
+
+      .stat:last-child {
+        border-bottom: 0;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+
+
+    /* Buyer page */
+    .buyer-hero {
+      position: relative;
+      min-height: 650px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: var(--white);
+      background-image:
+        linear-gradient(90deg, rgba(3, 16, 31, 0.97) 0%, rgba(3, 16, 31, 0.88) 43%, rgba(3, 16, 31, 0.38) 72%, rgba(3, 16, 31, 0.14) 100%),
+        url("buyer-exclusive-gemstone-presentation.png");
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    .buyer-hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 150px;
+      background: linear-gradient(transparent, rgba(3, 16, 31, 0.5));
+      pointer-events: none;
+    }
+
+    .buyer-hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(720px, calc(100% - 80px));
+      max-width: 720px;
+      margin-left: 60px;
+      margin-right: 0;
+      padding: 110px 0 125px;
+    }
+
+    .buyer-hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.25rem, 6.7vw, 6rem);
+      line-height: 0.9;
+      letter-spacing: -0.035em;
+    }
+
+    .buyer-hero h1 .hero-line { display: block; }
+    .buyer-hero h1 .hero-line.accent { color: #c7d2df; }
+
+    .buyer-hero p {
+      margin-top: 26px;
+      max-width: 610px;
+      color: var(--silver-200);
+      font-size: 1.04rem;
+    }
+
+    .buyer-intro {
+      padding: 115px 0;
+      background: var(--white);
+    }
+
+    .buyer-intro-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .buyer-intro-image {
+      min-height: 590px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+      background:
+        linear-gradient(180deg, rgba(3, 16, 31, 0.04), rgba(3, 16, 31, 0.22)),
+        url("buyer-gemstone-appraisal.png") center/cover no-repeat;
+    }
+
+    .buyer-intro-points {
+      display: grid;
+      gap: 14px;
+      margin-top: 30px;
+    }
+
+    .buyer-intro-point {
+      display: flex;
+      gap: 15px;
+      padding: 18px;
+      border: 1px solid var(--silver-200);
+      border-radius: 12px;
+      background: var(--silver-50);
+    }
+
+    .buyer-intro-point-icon {
+      flex: 0 0 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--sapphire-700);
+      background: var(--silver-100);
+      font-weight: 800;
+    }
+
+    .buyer-intro-point strong {
+      display: block;
+      color: var(--sapphire-950);
+      font-size: 0.9rem;
+    }
+
+    .buyer-intro-point p {
+      margin-top: 3px;
+      color: var(--silver-500);
+      font-size: 0.83rem;
+    }
+
+    .buyer-process {
+      padding: 115px 0;
+      background: linear-gradient(180deg, var(--silver-100), #ffffff);
+    }
+
+    .buyer-process-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 52px;
+    }
+
+    .buyer-process-card {
+      padding: 30px 25px;
+      border: 1px solid var(--silver-200);
+      border-radius: var(--radius-md);
+      background: var(--white);
+      box-shadow: 0 12px 30px rgba(3, 16, 31, 0.06);
+    }
+
+    .buyer-process-number {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 22px;
+      border-radius: 50%;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--sapphire-700), var(--sapphire-950));
+      font-weight: 800;
+    }
+
+    .buyer-process-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--sapphire-950);
+      font-size: 1.8rem;
+      line-height: 1;
+    }
+
+    .buyer-process-card p {
+      margin-top: 12px;
+      color: var(--silver-500);
+      font-size: 0.86rem;
+    }
+
+    .buyer-benefits {
+      padding: 115px 0;
+      background: var(--sapphire-950);
+      color: var(--white);
+    }
+
+    .buyer-benefits-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .buyer-benefits .eyebrow { color: var(--silver-300); }
+    .buyer-benefits .section-title { color: var(--white); }
+    .buyer-benefits .section-copy { color: var(--silver-300); }
+
+    .buyer-benefits-list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .buyer-benefit-item {
+      padding: 22px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .buyer-benefit-item strong {
+      display: block;
+      color: var(--white);
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .buyer-benefit-item p {
+      margin-top: 8px;
+      color: var(--silver-300);
+      font-size: 0.82rem;
+    }
+
+    .buyer-newsletter {
+      padding: 105px 0;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 85% 20%, rgba(56, 122, 189, 0.34), transparent 34%),
+        linear-gradient(135deg, var(--sapphire-950), var(--sapphire-800));
+    }
+
+    .buyer-newsletter-grid {
+      display: grid;
+      grid-template-columns: 1fr 0.9fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .buyer-newsletter .eyebrow { color: var(--silver-300); }
+    .buyer-newsletter .section-title { color: var(--white); }
+    .buyer-newsletter .section-copy { color: var(--silver-300); }
+
+    .buyer-newsletter-points {
+      display: grid;
+      gap: 10px;
+      margin: 22px 0 0 18px;
+      color: var(--silver-200);
+      font-size: 0.86rem;
+      line-height: 1.6;
+    }
+
+    .buyer-email-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .policy-link {
+      border: 0;
+      padding: 0;
+      color: var(--silver-500);
+      background: transparent;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .policy-link:hover { color: var(--white); }
+
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      background: rgba(2, 11, 21, 0.78);
+      backdrop-filter: blur(8px);
+    }
+
+    .modal-backdrop.open { display: grid; }
+
+    .modal-card {
+      width: min(680px, 100%);
+      max-height: min(78vh, 720px);
+      overflow: auto;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 16px;
+      color: var(--silver-200);
+      background: linear-gradient(145deg, #071a31, #03101f);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.42);
+    }
+
+    #termsModal .modal-card {
+      width: min(760px, 100%);
+      max-height: min(84vh, 880px);
+    }
+
+    .modal-head {
+      position: sticky;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px 24px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      background: #071a31;
+    }
+
+    .modal-head h2 {
+      font-family: "Cormorant Garamond", serif;
+      color: var(--white);
+      font-size: 2rem;
+    }
+
+    .modal-close {
+      width: 38px;
+      height: 38px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 50%;
+      color: var(--white);
+      background: rgba(255, 255, 255, 0.08);
+      cursor: pointer;
+    }
+
+    .modal-body {
+      padding: 24px;
+      color: var(--silver-300);
+      font-size: 0.9rem;
+    }
+
+    .modal-body h3 {
+      margin: 22px 0 8px;
+      color: var(--white);
+      font-size: 1rem;
+    }
+
+    .modal-body p {
+      margin-top: 9px;
+      color: var(--silver-300);
+      line-height: 1.7;
+    }
+
+    .modal-updated {
+      margin-top: 0 !important;
+      color: var(--silver-500) !important;
+      font-size: 0.76rem !important;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .modal-body .terms-list {
+      display: grid;
+      gap: 8px;
+      margin: 12px 0 0 20px;
+      color: var(--silver-300);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+
+    .modal-body a {
+      color: var(--white);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .whatsapp-link {
+      display: inline-flex !important;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .whatsapp-icon {
+      width: 18px;
+      height: 18px;
+      display: inline-grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--white);
+      background: #25d366;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      .buyer-intro-grid,
+      .buyer-benefits-grid,
+      .buyer-newsletter-grid { grid-template-columns: 1fr; }
+
+      .buyer-process-grid { grid-template-columns: repeat(2, 1fr); }
+      .buyer-intro-image { min-height: 460px; }
+    }
+
+    @media (max-width: 720px) {
+      .buyer-hero { min-height: 610px; background-position: 64% center; }
+      .buyer-hero-content {
+        width: calc(100% - 40px);
+        margin-inline: 20px;
+        padding: 88px 0 120px;
+      }
+      .buyer-hero h1 { font-size: clamp(3rem, 15vw, 4.25rem); }
+      .buyer-intro,
+      .buyer-process,
+      .buyer-benefits,
+      .buyer-newsletter { padding: 82px 0; }
+      .buyer-process-grid,
+      .buyer-benefits-list { grid-template-columns: 1fr; }
+      .buyer-intro-image { min-height: 350px; }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <div class="brand nav-brand" aria-label="Canadian Gem Trade Guild">
+        <div class="brand-mark">
+          <img src="cgtg-nav-logo.png" alt="Canadian Gem Trade Guild emblem" />
+        </div>
+      </div>
+
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/">Home</a>
+        <a href="/#about">About</a>
+        <a href="/#membership">Membership</a>
+        <a href="/suppliers">Suppliers</a>
+        <a href="/buyers" class="active">Buyers</a>
+        <a href="/#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#newsletter" class="btn btn-primary nav-cta">Buyer Updates</a>
+      </div>
+
+      <button class="menu-btn" id="menuButton" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+
+    <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation">
+      <a href="/">Home</a>
+      <a href="/#about">About</a>
+      <a href="/#membership">Membership</a>
+      <a href="/suppliers">Suppliers</a>
+      <a href="/buyers" class="active">Buyers</a>
+      <a href="#newsletter">Buyer Updates</a>
+      <a href="/#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="buyer-hero">
+      <div class="container buyer-hero-content">
+        <div class="hero-kicker">For gemstone and jewellery buyers</div>
+        <h1><span class="hero-line">Source gemstones</span><span class="hero-line">and jewellery with</span><span class="hero-line accent">confidence.</span></h1>
+        <p>Build a direct relationship with the Canadian Gem Trade Guild, receive regular gemstone and jewellery updates, or request a specific item by email. For gemstones, documentation is provided and Canadian verification is completed before payment is collected.</p>
+        <div class="hero-actions">
+          <a href="#newsletter" class="btn btn-primary">Request Buyer Updates</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Buyer confidence and purchasing safeguards">
+      <div class="container trust-grid">
+        <article class="trust-item"><div class="trust-icon">✓</div><div><strong>Direct Guild Relationship</strong><p>Buyers communicate directly with the Guild about available gemstones, jewellery and specific requests.</p></div></article>
+        <article class="trust-item"><div class="trust-icon">◇</div><div><strong>Verification Before Shipment</strong><p>The gemstone is verified and documented in the country from which it is supplied before it reaches Canada.</p></div></article>
+        <article class="trust-item"><div class="trust-icon">▤</div><div><strong>GIA Verification in Canada</strong><p>The gemstone is verified in Canada through the GIA verification process before a purchase proceeds.</p></div></article>
+        <article class="trust-item"><div class="trust-icon">↗</div><div><strong>Pay After Verification</strong><p>Payment is collected only after the gemstone has been verified in Canada.</p></div></article>
+      </div>
+    </section>
+
+    <section class="buyer-intro">
+      <div class="container buyer-intro-grid">
+        <div class="buyer-intro-image" role="img" aria-label="Buyer reviewing gemstones and jewellery through the Guild"></div>
+        <div>
+          <div class="eyebrow">Your relationship with the Guild</div>
+          <h2 class="section-title">A direct buying relationship built on clarity and verification.</h2>
+          <p class="section-copy">Buyers work directly with the Canadian Gem Trade Guild to follow available inventory, request specific gemstones or jewellery and review the information that matters before deciding whether to proceed. When a gemstone is selected, verification and documentation from the country supplying it are provided, followed by GIA verification in Canada before payment is collected.</p>
+          <div class="buyer-intro-points">
+            <div class="buyer-intro-point"><div class="buyer-intro-point-icon">01</div><div><strong>A Direct Relationship with the Guild</strong><p>Sign up for regular inventory emails or contact the Guild directly with a specific gemstone or jewellery request.</p></div></div>
+            <div class="buyer-intro-point"><div class="buyer-intro-point-icon">02</div><div><strong>Verification in the Supplying Country</strong><p>Review verification and supporting documentation from the country supplying the gemstone, which may differ from its geological origin.</p></div></div>
+            <div class="buyer-intro-point"><div class="buyer-intro-point-icon">03</div><div><strong>Canadian Verification Before Payment</strong><p>GIA verification is completed in Canada before payment is collected for the gemstone.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="buyer-process" id="buyer-process">
+      <div class="container">
+        <div class="section-heading-center">
+          <div class="eyebrow">How buying through the Guild works</div>
+          <h2 class="section-title">From your first request to a verified purchase.</h2>
+          <p class="section-copy">Follow available gemstone and jewellery inventory by email or tell the Guild what you need. When a specific gemstone is selected, documentation and Canadian verification come before payment.</p>
+        </div>
+        <div class="buyer-process-grid">
+          <article class="buyer-process-card"><div class="buyer-process-number">1</div><h3>Sign Up or Send a Request</h3><p>Request regular buyer inventory updates or email the Guild with the specific gemstone or jewellery you are looking for.</p></article>
+          <article class="buyer-process-card"><div class="buyer-process-number">2</div><h3>Review Available Options</h3><p>Consider suitable gemstones or jewellery and discuss the relevant details, preferences and pricing directly with the Guild.</p></article>
+          <article class="buyer-process-card"><div class="buyer-process-number">3</div><h3>Review Initial Verification</h3><p>Review verification and supporting documentation from the country where the gemstone is supplied or shipped.</p></article>
+          <article class="buyer-process-card"><div class="buyer-process-number">4</div><h3>GIA Verification, Then Payment</h3><p>The gemstone is verified in Canada through the GIA verification process before payment is collected.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="buyer-benefits">
+      <div class="container buyer-benefits-grid">
+        <div>
+          <div class="eyebrow">Why buyers work with the Guild</div>
+          <h2 class="section-title">Confidence comes from knowing exactly what you are buying.</h2>
+          <p class="section-copy">Whether you are purchasing for a jewellery business, design studio or private collection, the Guild gives you one direct point of contact, clear product information and verification before payment is collected.</p>
+          <div style="margin-top:30px"><a href="#newsletter" class="btn btn-primary">Request Buyer Updates</a></div>
+        </div>
+        <div class="buyer-benefits-list">
+          <div class="buyer-benefit-item"><strong>Direct Guild Relationship</strong><p>Discuss your interests, requests and potential purchases directly with the Canadian Gem Trade Guild.</p></div>
+          <div class="buyer-benefit-item"><strong>Regular Inventory Emails</strong><p>Receive updates about available gemstones, jewellery and relevant new inventory.</p></div>
+          <div class="buyer-benefit-item"><strong>Specific Sourcing Requests</strong><p>Tell the Guild which gemstone types, jewellery styles, sizes, materials or price ranges you are seeking.</p></div>
+          <div class="buyer-benefit-item"><strong>Verification Before Shipment</strong><p>Review verification and supporting documentation from the country supplying the gemstone.</p></div>
+          <div class="buyer-benefit-item"><strong>GIA Verification in Canada</strong><p>Gemstone verification is completed in Canada before a payment request is made.</p></div>
+          <div class="buyer-benefit-item"><strong>Payment Only After Verification</strong><p>No gemstone payment is collected before the Canadian verification process has been completed.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="buyer-newsletter" id="newsletter">
+      <div class="container buyer-newsletter-grid">
+        <div>
+          <div class="eyebrow">Connect with the Guild</div>
+          <h2 class="section-title">Receive inventory updates or request exactly what you need.</h2>
+          <p class="section-copy">Sign up for regular emails featuring available gemstones and jewellery, or send the Guild a specific request. When a suitable gemstone is selected, verification from the supplying country is provided and GIA verification is completed in Canada before payment is collected.</p>
+          <ul class="buyer-newsletter-points">
+            <li>Regular updates on available gemstone and jewellery inventory.</li>
+            <li>Request specific gemstones, jewellery styles, colours, sizes, materials or price ranges.</li>
+            <li>Review verification from the supplying country and receive Canadian GIA verification before payment.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="buyer-email-actions">
+            <a class="btn btn-primary" href="mailto:info@canadiangemtradeguild.ca?subject=Buyer%20Updates%20Request">Request Buyer Updates</a>
+            <a class="btn btn-outline" href="mailto:info@canadiangemtradeguild.ca?subject=Gemstone%20or%20Jewellery%20Request">Request a Specific Item</a>
+          </div>
+          <p class="form-note">Both options connect you directly with the Guild by email.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="brand">
+            <div class="brand-mark"><img src="cgtg-nav-logo.png" alt="Canadian Gem Trade Guild emblem" /></div>
+            <div class="brand-copy"><strong>Canadian Gem Trade Guild</strong><span>Building trust. Strengthening trade.</span></div>
+          </a>
+          <p>A professional Canadian organization created to improve trust, structure and responsible participation across the gemstone trade.</p>
+        </div>
+
+        <div class="footer-col"><h4>Explore</h4><a href="/">Home</a><a href="/#about">About</a><a href="/#membership">Membership</a></div>
+        <div class="footer-col"><h4>Trade</h4><a href="/suppliers">Suppliers</a><a href="/buyers">Buyers</a><a href="#newsletter">Newsletter</a></div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="mailto:info@canadiangemtradeguild.ca">info@canadiangemtradeguild.ca</a>
+          <a href="#">Ontario, Canada</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 Canadian Gem Trade Guild. All rights reserved.</span>
+        <span><button class="policy-link" type="button" data-modal="privacyModal">Privacy Policy</button> · <button class="policy-link" type="button" data-modal="termsModal">Terms of Membership</button></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="modal-backdrop" id="privacyModal" aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="privacyTitle">
+      <div class="modal-head"><h2 id="privacyTitle">Privacy Policy</h2><button class="modal-close" type="button" aria-label="Close privacy policy">✕</button></div>
+      <div class="modal-body">
+        <p class="modal-updated">Last updated: August 1, 2026</p>
+
+        <h3>Information we collect</h3>
+        <p>We may collect information you provide through membership applications, contact forms, newsletter signups or direct communications, including your name, business name, email address, phone number and information about your gemstone or jewellery business. When reasonably necessary to verify an application, we may also request government-issued identification, business registration information or supporting product documentation.</p>
+
+        <h3>How we use information</h3>
+        <p>We use this information to review membership applications, verify identity or business information, prevent fraud, administer memberships and renewals, communicate with members and applicants, provide Guild services, maintain records and send updates that you have requested.</p>
+
+        <h3>Payments and third-party services</h3>
+        <p>Payments, application forms and supporting records may be processed or stored by authorized third-party service providers involved in payment processing, membership administration, document handling or verification. We do not intend to store full payment-card details on this website.</p>
+
+        <h3>Sharing of information</h3>
+        <p>We do not sell personal information. We may share information with authorized service providers when needed to operate the Guild, process applications, verify information or comply with legal obligations. Identification documents will not be shared with potential buyers or referring members without permission, unless disclosure is required or permitted by law.</p>
+
+        <h3>Data retention and protection</h3>
+        <p>We retain personal information and identification documents only for as long as reasonably required for their stated purposes, membership administration, business records or applicable legal obligations. Access is limited to authorized individuals or service providers, and we use reasonable safeguards appropriate to the sensitivity of the information.</p>
+
+        <h3>Your choices</h3>
+        <p>You may request access to, correction of or deletion of your personal information, subject to applicable recordkeeping requirements. You may also unsubscribe from promotional emails at any time.</p>
+
+        <h3>Contact us</h3>
+        <p>For privacy questions or requests, contact us at <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>.</p>
+      </div>
+    </section>
+  </div>
+
+  <div class="modal-backdrop" id="termsModal" aria-hidden="true">
+    <section class="modal-card" role="dialog" aria-modal="true" aria-labelledby="termsTitle">
+      <div class="modal-head"><h2 id="termsTitle">Associate Supplier Membership Terms</h2><button class="modal-close" type="button" aria-label="Close membership terms">✕</button></div>
+      <div class="modal-body">
+        <p class="modal-updated">Last updated: August 1, 2026</p>
+
+        <h3>1. Membership Purpose</h3>
+        <p>The Associate Supplier Membership program is operated by Canadian Gem Trade Guild. References to “the Guild,” “we,” “us,” or “our” mean Canadian Gem Trade Guild.</p>
+        <p>The Canadian Gem Trade Guild provides a structured membership program for gemstone and jewellery suppliers interested in exploring opportunities within the Canadian market.</p>
+        <p>The Guild acts as an intermediary between suppliers and potential buyers and may facilitate product submissions, evaluations and communication regarding potential purchasing opportunities.</p>
+
+        <h3>2. Membership Eligibility</h3>
+        <p>Associate Supplier Membership is available to individuals and businesses involved in gemstone mining, trading, sourcing, manufacturing or jewellery production.</p>
+        <p>Applicants must provide accurate information about their identity, business activities and products.</p>
+        <p>Membership applications may require a valid referral code and supporting identification or business documentation.</p>
+        <p>Other membership tiers, including Verified Supplier and Partner Supplier memberships, may be subject to additional eligibility requirements, fees and separate terms and conditions.</p>
+
+        <h3>3. Membership Fee</h3>
+        <p>The current Associate Supplier Membership fee is CAD $99 per year. Membership pricing may be subject to change.</p>
+        <p>The applicable membership fee will be disclosed before payment. Existing members will be notified of any change to their renewal fee before the next scheduled renewal.</p>
+        <p>Payment must be completed before the membership application is reviewed.</p>
+        <p>Payment does not guarantee membership approval and does not represent a gemstone purchase, deposit, investment or guarantee of future business.</p>
+
+        <h3>4. Application Review</h3>
+        <p>Applications are reviewed by the Membership Committee.</p>
+        <p>Applicants may be asked to provide additional information or identification documents during the review process.</p>
+        <p>The Guild aims to provide an initial response within 12 business days of receiving a completed application. Additional time may be required if further information or verification is necessary.</p>
+
+        <h3>5. Approval and Membership Period</h3>
+        <p>Membership becomes active once the application has been approved and the applicant receives written confirmation from the Guild.</p>
+        <p>The annual billing period begins on the date the initial membership payment is processed. Membership benefits become available upon approval and remain active for the remainder of the current paid annual billing period.</p>
+        <p>If an application is declined, the subscription will be cancelled and the initial membership fee will be refunded in full.</p>
+
+        <h3>6. Refund Policy</h3>
+        <p>If a membership application is declined, the membership fee will be refunded in full.</p>
+        <p>After membership has been approved and activated, the annual membership fee is generally non-refundable, except where a refund is required by applicable law.</p>
+        <p>A lack of purchasing opportunities, product submissions, offers or completed sales does not automatically entitle a member to a refund.</p>
+
+        <h3>7. No Guaranteed Purchases or Sales</h3>
+        <p>Membership does not guarantee:</p>
+        <ul class="terms-list">
+          <li>The purchase of any gemstone or jewellery.</li>
+          <li>A specific number of product evaluations or purchasing opportunities.</li>
+          <li>Direct introductions to buyers.</li>
+          <li>A minimum sales volume, purchase price or profit.</li>
+          <li>Market entry, business partnerships, immigration assistance or visa approval.</li>
+        </ul>
+        <p>Any purchasing opportunity depends on buyer requirements, product suitability, pricing, documentation, market conditions and other relevant considerations.</p>
+
+        <h3>8. Product Information and Disclosure</h3>
+        <p>Members must provide accurate and complete information about products submitted for consideration. This includes, where applicable:</p>
+        <ul class="terms-list">
+          <li>Gemstone type, weight and dimensions.</li>
+          <li>Known treatments or enhancements.</li>
+          <li>Whether a gemstone is natural, laboratory-grown, synthetic or imitation.</li>
+          <li>Country of origin, when known.</li>
+          <li>Laboratory reports or certifications.</li>
+          <li>Product condition, availability and asking price.</li>
+        </ul>
+        <p>The Guild may decline to consider products where information is incomplete, misleading, unverifiable or inconsistent with applicable requirements.</p>
+
+        <h3>9. Purchasing Arrangements</h3>
+        <p>The Guild facilitates communication and purchasing opportunities between suppliers and potential buyers.</p>
+        <p>Any purchase or sale must be agreed upon separately and may include additional terms regarding price, inspection, payment, shipping, insurance, customs and delivery.</p>
+        <p>Membership does not require the Guild or any buyer to purchase products.</p>
+        <p>Members must not ship gemstones or jewellery unless they have received clear written instructions regarding the proposed shipment.</p>
+
+        <h3>10. Identification and Privacy</h3>
+        <p>Applicants may be asked to provide government-issued identification or business registration information for identity verification, membership administration and fraud prevention.</p>
+        <p>Personal information and identification documents will be accessed only by authorized individuals or service providers involved in membership administration or verification.</p>
+        <p>Identification documents will not be shared with potential buyers or referring members without permission, unless disclosure is required or permitted by law.</p>
+        <p>Information will be retained only for as long as reasonably necessary for the stated purposes or applicable legal obligations.</p>
+        <p>Privacy-related questions may be directed to <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>.</p>
+
+        <h3>11. Confidentiality</h3>
+        <p>Members must respect the confidentiality of information shared during the membership and purchasing process.</p>
+        <p>This includes non-public information relating to buyers, suppliers, pricing, product evaluations and business arrangements.</p>
+        <p>The Guild is not required to disclose the identities or contact information of potential buyers or other suppliers.</p>
+
+        <h3>12. Use of Guild Name and Materials</h3>
+        <p>Members may use the Guild's name, logo, membership badges, digital IDs, membership cards, listings or other Guild materials only when authorized by the Guild and in accordance with any applicable conditions or guidelines.</p>
+        <p>Members must not misrepresent their membership category, claim a verification or partnership status they have not received, or suggest that the Guild has endorsed a product, guaranteed a purchase or approved a business relationship without authorization.</p>
+        <p>Use of the Guild's name or materials does not transfer ownership of the Guild's name, logo, website content or other intellectual property. Members must stop using Guild materials when their membership is suspended or terminated, or when the Guild withdraws its authorization.</p>
+
+        <h3>13. Membership Renewal</h3>
+        <p>Associate Supplier Membership is an automatically renewing annual subscription.</p>
+        <p>By purchasing a membership, the member authorizes Canadian Gem Trade Guild to charge the payment method provided for the applicable annual membership fee upon each renewal. The current annual membership fee is CAD $99.</p>
+        <p>Membership will automatically renew every 12 months on the anniversary of the original payment date unless the member cancels before the next scheduled renewal date.</p>
+        <p>Members may cancel their subscription at any time by contacting <a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a>. Cancellation prevents future renewal charges, but the membership remains active until the end of the current paid membership period.</p>
+        <p>Membership fees that have already been charged are non-refundable, except where required by applicable law.</p>
+        <p>Any changes to the annual membership fee will be communicated before the next renewal charge, and members may cancel before the new charge takes effect.</p>
+        <p>If an application is declined, the subscription will be cancelled and the initial membership fee will be refunded in full.</p>
+
+        <h3>14. Suspension or Termination</h3>
+        <p>The Canadian Gem Trade Guild reserves the right to suspend or terminate a membership at any time if a member:</p>
+        <ul class="terms-list">
+          <li>Fails to pay an applicable membership or renewal fee.</li>
+          <li>Provides false or misleading information.</li>
+          <li>Conceals gemstone treatments or other material product details.</li>
+          <li>Submits fraudulent identification, certifications or documentation.</li>
+          <li>Engages in unlawful, abusive or inappropriate conduct.</li>
+          <li>Misuses the Guild’s name, reputation or confidential information.</li>
+          <li>Fails to follow applicable membership requirements or policies.</li>
+          <li>Engages in any activity that may compromise the integrity, safety or reputation of the Guild, its members or its buyers.</li>
+        </ul>
+        <p>Where appropriate, a member may be given an opportunity to respond before a final decision is made. However, membership may be suspended or terminated without prior notice where appropriate.</p>
+        <p>Members whose memberships are suspended or terminated are not entitled to a refund of their membership fees, except where required by applicable law.</p>
+        <p>Upon termination, all membership privileges and access to Guild-related opportunities end immediately.</p>
+
+        <h3>15. Acceptance of Terms</h3>
+        <p>By accepting these terms at checkout, proceeding with payment and submitting a membership application, the applicant confirms that they have read, understood and accepted these Associate Supplier Membership Terms.</p>
+        <p>Questions may be directed to:</p>
+        <p>Membership Committee<br />Canadian Gem Trade Guild<br /><a href="mailto:memberships@canadiangemtradeguild.ca">memberships@canadiangemtradeguild.ca</a><br /><a href="https://www.canadiangemtradeguild.ca/">www.canadiangemtradeguild.ca</a></p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const menuButton = document.getElementById("menuButton");
+    const mobileNav = document.getElementById("mobileNav");
+
+    menuButton.addEventListener("click", () => {
+      const isOpen = mobileNav.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", isOpen);
+      menuButton.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll("#mobileNav a").forEach((link) => {
+      link.addEventListener("click", () => {
+        mobileNav.classList.remove("open");
+        menuButton.setAttribute("aria-expanded", "false");
+        menuButton.textContent = "☰";
+      });
+    });
+
+
+    const openModal = (modal) => {
+      modal.classList.add("open");
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    };
+
+    const closeModal = (modal) => {
+      modal.classList.remove("open");
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    };
+
+    document.querySelectorAll("[data-modal]").forEach((button) => {
+      button.addEventListener("click", () => openModal(document.getElementById(button.dataset.modal)));
+    });
+
+    document.querySelectorAll(".modal-backdrop").forEach((modal) => {
+      modal.addEventListener("click", (event) => { if (event.target === modal) closeModal(modal); });
+      modal.querySelector(".modal-close").addEventListener("click", () => closeModal(modal));
+    });
+
+    function openPolicyFromHash() {
+      if (window.location.hash === "#membership-terms") {
+        openModal(document.getElementById("termsModal"));
+      } else if (window.location.hash === "#privacy-policy") {
+        openModal(document.getElementById("privacyModal"));
+      }
+    }
+
+    window.addEventListener("hashchange", openPolicyFromHash);
+    openPolicyFromHash();
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") document.querySelectorAll(".modal-backdrop.open").forEach(closeModal);
+    });
+  </script>
+</body>
+</html>
